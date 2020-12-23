@@ -27,4 +27,10 @@ public class UserRegistration {
         else
             return false;
     }
+    public boolean password(String pattern,String password){
+        if (Pattern.matches(pattern,password))
+            return true;
+        else
+            return false;
+    }
 }
