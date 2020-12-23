@@ -32,10 +32,10 @@ public class UserRegistrationTest {
         boolean result = userRegistration.phone("^[0-9]{2}[ ]?[0-9]{10}$","917550167198");
         Assert.assertEquals(true,result);
     }
-    //UserCase5
+    //UserCase7
     @Test
     public void passwordTest() {
-        boolean result = userRegistration.password("^(?=.{8,}$)(?=.*[A-Z])[a-zA-Z0-9]","");
+        boolean result = userRegistration.password("^(?=.{8,}$)(?=.*\\d)(?=.*[A-Z])[a-zA-Z0-9]","");
         Assert.assertEquals(true,result);
     }
 }
