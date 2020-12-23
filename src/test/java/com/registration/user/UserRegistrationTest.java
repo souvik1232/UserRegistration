@@ -35,7 +35,7 @@ public class UserRegistrationTest {
     //UserCase5
     @Test
     public void passwordTest() {
-        boolean result = userRegistration.password("^[a-zA-Z0-9]{8,}$","abcdefgh");
+        boolean result = userRegistration.password("^(?=.{8,}$)(?=.*[A-Z])[a-zA-Z0-9]","");
         Assert.assertEquals(true,result);
     }
 }
