@@ -26,4 +26,10 @@ public class UserRegistrationTest {
         boolean result = userRegistration.email("^[a-zA-Z0-9\\-\\+\\.]+.([a-zA-Z0-9])*@([a-z0-9]+.[a-z]{2,}.([a-z]{2,})?)$","souvik199831@gmail.com");
         Assert.assertEquals(true,result);
     }
+    //UserCase4
+    @Test
+    public void phoneTest() {
+        boolean result = userRegistration.phone("^[0-9]{2}[ ]?[0-9]{10}$","917550167198");
+        Assert.assertEquals(true,result);
+    }
 }

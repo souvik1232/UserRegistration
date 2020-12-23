@@ -21,4 +21,10 @@ public class UserRegistration {
         else
             return false;
     }
+    public boolean phone(String pattern,String phone){
+        if (Pattern.matches(pattern,phone))
+            return true;
+        else
+            return false;
+    }
 }
