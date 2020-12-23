@@ -15,4 +15,10 @@ public class UserRegistration {
         else
             return false;
     }
+    public boolean email(String pattern,String email){
+        if (Pattern.matches(pattern,email))
+            return true;
+        else
+            return false;
+    }
 }
