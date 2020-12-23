@@ -9,4 +9,10 @@ public class UserRegistration {
         else
             return false;
     }
+    public boolean lastName(String pattern,String lastName){
+        if (Pattern.matches(pattern,lastName))
+            return true;
+        else
+            return false;
+    }
 }

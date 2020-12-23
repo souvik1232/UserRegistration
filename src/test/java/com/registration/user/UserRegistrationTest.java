@@ -14,4 +14,10 @@ public class UserRegistrationTest {
         Assert.assertEquals(true,result);
 
     }
+    //UserCase2
+    @Test
+    public void lastNameTest() {
+        boolean result = userRegistration.firstName("^[A-Z]{1}[a-z]{2,}$","Mandal");
+        Assert.assertEquals(true,result);
+    }
 }
