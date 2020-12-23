@@ -10,32 +10,32 @@ public class UserRegistrationTest {
     //UserCase1
     @Test
     public void firstNameTest(){
-        boolean result = userRegistration.firstName("^[A-Z]{1}[a-z]{2,}$","Souvik");
+        boolean result = userRegistration.firstName("^[A-Z]{1}[a-z]{2,}$","Souvik","Happy");
         Assert.assertEquals(true,result);
 
     }
     //UserCase2
     @Test
     public void lastNameTest() {
-        boolean result = userRegistration.lastName("^[A-Z]{1}[a-z]{2,}$","Mandal");
+        boolean result = userRegistration.lastName("^[A-Z]{1}[a-z]{2,}$","Mandal","Happy");
         Assert.assertEquals(true,result);
     }
     //UserCase3
     @Test
     public void emailTest() {
-        boolean result = userRegistration.email("^[a-zA-Z0-9\\-\\+\\.]+.([a-zA-Z0-9])*@([a-z0-9]+.[a-z]{2,}.([a-z]{2,})?)$","souvik199831@gmail.com");
+        boolean result = userRegistration.email("^[a-zA-Z0-9\\-\\+\\.]+.([a-zA-Z0-9])*@([a-z0-9]+.[a-z]{2,}.([a-z]{2,})?)$","souvik199831@gmail.com","Happy");
         Assert.assertEquals(true,result);
     }
     //UserCase4
     @Test
     public void phoneTest() {
-        boolean result = userRegistration.phone("^[0-9]{2}[ ]?[0-9]{10}$","917550167198");
+        boolean result = userRegistration.phone("^[0-9]{2}[ ]?[0-9]{10}$","917550167198","Happy");
         Assert.assertEquals(true,result);
     }
     //UserCase8
     @Test
     public void passwordTest() {
-        boolean result = userRegistration.password("^(?=.{8,}$)(?=.*\\d)(?=.*[A-Z])([a-zA-Z0-9]+[\\@\\#\\^])","souvik123A@");
+        boolean result = userRegistration.password("^(?=.{8,}$)(?=.*\\d)(?=.*[A-Z])([a-zA-Z0-9]+[\\@\\#\\^])","souvik123A@","Happy");
         Assert.assertEquals(true,result);
     }
 }
