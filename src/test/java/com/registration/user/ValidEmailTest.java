@@ -2,6 +2,7 @@ package com.registration.user;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -12,8 +13,8 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 //UserCase11
 public class ValidEmailTest {
-   private String email2Test;
-   private boolean expectedResult;
+   private final String email2Test;
+   private final boolean expectedResult;
 
    public ValidEmailTest(String email, boolean expectedResult){
        this.email2Test = email;
@@ -40,7 +41,14 @@ public class ValidEmailTest {
     @Test
     public void shouldValidateAllTheEmailSamples() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.email("^[a-zA-Z0-9\\-\\+\\.]+.([a-zA-Z0-9])*@([a-z0-9]+.[a-z]{2,}.([a-z]{2,})?)$",this.email2Test,"Happy");
+        boolean result = false;
+        try {
+            ExpectedException expectedException = ExpectedException.none();
+            expectedException.expect(InvalidUserException.class);
+            result = userRegistration.email("^[a-zA-Z0-9\\-\\+\\.]+.([a-zA-Z0-9])*@([a-z0-9]+.[a-z]{2,}.([a-z]{2,})?)$",this.email2Test,"Happy");
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        }
         Assert.assertEquals(this.expectedResult,result);
     }
 }
