@@ -2,7 +2,9 @@ package com.registration.user;
 
 import java.util.regex.Pattern;
 
+
 public class UserRegistration {
+
     public boolean firstName(String pattern,String firstName,String mood) throws InvalidUserException {
         try {
             if (mood.equals("Happy")) {
@@ -68,4 +70,6 @@ public class UserRegistration {
             throw new InvalidUserException("Please enter proper message");
         }
     }
+
+
 }
